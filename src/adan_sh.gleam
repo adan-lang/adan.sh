@@ -1,31 +1,22 @@
-import gleam/bytes_tree
-import gleam/erlang/process
-import gleam/http/request.{type Request}
-import gleam/http/response
+import constants
 
-import lustre/element
+import gleam/erlang/process
 
 import mist
 
-import pages/homepage
+import router/router
 
-fn handle_request(_request: Request(mist.Connection)) {
-  let html =
-    homepage.view_homepage()
-    |> element.to_document_string()
-
-  response.new(200)
-  |> response.set_header("content-type", "text/html")
-  |> response.set_body(mist.Bytes(bytes_tree.from_string(html)))
-}
+import wisp
+import wisp/wisp_mist
 
 pub fn main() {
-  let port = 8000
+  wisp.configure_logger()
 
   let assert Ok(_) =
-    mist.new(handle_request)
-    |> mist.port(port)
-    |> mist.start
+    wisp_mist.handler(router.handle, constants.secret_keybase)
+    |> mist.new()
+    |> mist.port(8080)
+    |> mist.start()
 
   process.sleep_forever()
 }
