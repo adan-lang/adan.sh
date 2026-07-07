@@ -1,5 +1,6 @@
 import constants
 
+import elements/footer
 import elements/navbar
 
 import lustre/attribute
@@ -36,6 +37,8 @@ pub fn view_homepage() {
     ]),
     html.body([], [
       navbar.view_navbar(),
+      // page content ...
+      footer.view_footer(),
     ]),
   ])
 }

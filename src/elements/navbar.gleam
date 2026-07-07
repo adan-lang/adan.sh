@@ -17,6 +17,8 @@ pub fn view_navbar() -> Element(msg) {
         [
           attribute.href("https://github.adan.sh/"),
           attribute.class("navbar-link"),
+          attribute.target("_blank"),
+          attribute.rel("noopener noreferrer"),
         ],
         [html.text("Source")],
       ),
@@ -24,17 +26,26 @@ pub fn view_navbar() -> Element(msg) {
         [
           attribute.href("https://docs.adan.sh/"),
           attribute.class("navbar-link"),
+          attribute.target("_blank"),
+          attribute.rel("noopener noreferrer"),
         ],
         [html.text("Documentation")],
       ),
       html.a(
-        [attribute.href("https://try.adan.sh/"), attribute.class("navbar-link")],
+        [
+          attribute.href("https://try.adan.sh/"),
+          attribute.class("navbar-link"),
+          attribute.target("_blank"),
+          attribute.rel("noopener noreferrer"),
+        ],
         [html.text("Demo")],
       ),
       html.a(
         [
           attribute.href("https://get.adan.sh/"),
           attribute.class("navbar-link navbar-link--cta"),
+          attribute.target("_blank"),
+          attribute.rel("noopener noreferrer"),
         ],
         [html.text("Download")],
       ),
