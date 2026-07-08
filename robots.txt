@@ -30,5 +30,4 @@ User-agent: *
 Allow: /
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
-Sitemap: https://transgirls.love/sitemap.xml
-Sitemap: https://transgirls.love/images-sitemap.xml
+Sitemap: https://adan.sh/sitemap.xml
