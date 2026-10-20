@@ -27,6 +27,12 @@ pub fn view_homepage() {
       ]),
       html.link([
         attribute.rel("stylesheet"),
+        attribute.href(
+          "https://cdn.jsdelivr.net/npm/@fontsource/monaspace-radon@5.3.0/index.css",
+        ),
+      ]),
+      html.link([
+        attribute.rel("stylesheet"),
         attribute.href("/static/styles.css"),
       ]),
       html.link([
@@ -37,7 +43,100 @@ pub fn view_homepage() {
     ]),
     html.body([], [
       navbar.view_navbar(),
-      // page content ...
+      html.main([attribute.class("home-main")], [
+        html.section([attribute.class("home-intro")], [
+          html.h1([attribute.class("home-title")], [
+            html.text("ADAN"),
+          ]),
+          html.p([attribute.class("home-description")], [
+            html.text("Use high level programming for lower level jobs."),
+          ]),
+          html.div([attribute.class("home-actions")], [
+            html.a(
+              [
+                attribute.href("https://try.adan.sh/"),
+                attribute.class("home-action home-action--primary"),
+                attribute.target("_blank"),
+                attribute.rel("noopener noreferrer"),
+              ],
+              [html.text("Try ADAN")],
+            ),
+            html.a(
+              [
+                attribute.href("https://docs.adan.sh/"),
+                attribute.class("home-action"),
+                attribute.target("_blank"),
+                attribute.rel("noopener noreferrer"),
+              ],
+              [html.text("Read our docs")],
+            ),
+          ]),
+        ]),
+        html.section(
+          [
+            attribute.class("home-example"),
+            attribute.attribute("aria-label", "ADAN code example"),
+          ],
+          [
+            html.pre([attribute.class("home-code")], [
+              html.code([attribute.class("home-code-content")], [
+                html.span([attribute.class("syntax-keyword")], [
+                  html.text("local"),
+                ]),
+                html.text(" message = "),
+                html.span([attribute.class("syntax-string")], [
+                  html.text("\"Hello\""),
+                ]),
+                html.text("\n"),
+                html.span([attribute.class("syntax-keyword")], [
+                  html.text("local"),
+                ]),
+                html.text(" person = "),
+                html.span([attribute.class("syntax-string")], [
+                  html.text("\"world\""),
+                ]),
+                html.text("\n\n"),
+                html.span([attribute.class("syntax-keyword")], [
+                  html.text("function"),
+                ]),
+                html.text(" "),
+                html.span([attribute.class("syntax-function")], [
+                  html.text("announce"),
+                ]),
+                html.text(" "),
+                html.span([attribute.class("syntax-operator")], [
+                  html.text("->"),
+                ]),
+                html.text(" (message, person) {\n    "),
+                html.span([attribute.class("syntax-function")], [
+                  html.text("print"),
+                ]),
+                html.text("("),
+                html.span([attribute.class("syntax-string")], [
+                  html.text("`"),
+                  html.span([attribute.class("syntax-interpolation")], [
+                    html.text("${message}"),
+                  ]),
+                  html.text(", "),
+                  html.span([attribute.class("syntax-interpolation")], [
+                    html.text("${person}"),
+                  ]),
+                  html.text("!`"),
+                ]),
+                html.text(")\n}\n\n"),
+                html.span([attribute.class("syntax-function")], [
+                  html.text("announce"),
+                ]),
+                html.text(" "),
+                html.span([attribute.class("syntax-operator")], [
+                  html.text("<-"),
+                ]),
+                html.text(" (message, person)"),
+              ]),
+            ]),
+          ],
+        ),
+      ]),
       footer.view_footer(),
     ]),
   ])
