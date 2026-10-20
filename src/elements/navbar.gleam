@@ -15,7 +15,7 @@ pub fn view_navbar() -> Element(msg) {
     html.div([attribute.class("navbar-links")], [
       html.a(
         [
-          attribute.href("https://github.adan.sh/"),
+          attribute.href("https://github.com/adan-lang/adan"),
           attribute.class("navbar-link"),
           attribute.target("_blank"),
           attribute.rel("noopener noreferrer"),

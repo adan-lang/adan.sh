@@ -35,7 +35,7 @@ pub fn view_footer() -> Element(msg) {
         ),
         html.a(
           [
-            attribute.href("https://github.adan.sh/"),
+            attribute.href("https://github.com/adan-lang/adan"),
             attribute.class("footer-link"),
             attribute.target("_blank"),
             attribute.rel("noopener noreferrer"),
