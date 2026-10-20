@@ -9,6 +9,10 @@ import lustre/element/html
 pub fn view_homepage() {
   html.html([], [
     html.head([], [
+      html.meta([
+        attribute.attribute("name", "viewport"),
+        attribute.attribute("content", "width=device-width, initial-scale=1"),
+      ]),
       html.title([], constants.website_title),
       html.link([
         attribute.rel("preconnect"),
