@@ -87,55 +87,43 @@ pub fn view_homepage() {
                 html.span([attribute.class("syntax-keyword")], [
                   html.text("local"),
                 ]),
-                html.text(" message = "),
-                html.span([attribute.class("syntax-string")], [
-                  html.text("\"Hello\""),
-                ]),
-                html.text("\n"),
-                html.span([attribute.class("syntax-keyword")], [
-                  html.text("local"),
-                ]),
-                html.text(" person = "),
-                html.span([attribute.class("syntax-string")], [
-                  html.text("\"world\""),
-                ]),
-                html.text("\n\n"),
+                html.text(" codes = [72, 101, 108, 108, 111]\n\n"),
                 html.span([attribute.class("syntax-keyword")], [
                   html.text("function"),
                 ]),
                 html.text(" "),
                 html.span([attribute.class("syntax-function")], [
-                  html.text("announce"),
+                  html.text("sum"),
                 ]),
                 html.text(" "),
                 html.span([attribute.class("syntax-operator")], [
                   html.text("->"),
                 ]),
-                html.text(" (message, person) {\n    "),
+                html.text(" (codes) {\n    "),
+                html.span([attribute.class("syntax-keyword")], [
+                  html.text("local"),
+                ]),
+                html.text(" acc = 0\n    "),
+                html.span([attribute.class("syntax-keyword")], [
+                  html.text("for"),
+                ]),
+                html.text(" code in codes { acc += code }\n    "),
+                html.span([attribute.class("syntax-operator")], [
+                  html.text("<-"),
+                ]),
+                html.text(" acc % 256\n}\n\n"),
                 html.span([attribute.class("syntax-function")], [
                   html.text("print"),
                 ]),
                 html.text("("),
                 html.span([attribute.class("syntax-string")], [
+                  html.text("`Sum: "),
+                  html.span([attribute.class("syntax-interpolation")], [
+                    html.text("${sum <- (codes)}"),
+                  ]),
                   html.text("`"),
-                  html.span([attribute.class("syntax-interpolation")], [
-                    html.text("${message}"),
-                  ]),
-                  html.text(", "),
-                  html.span([attribute.class("syntax-interpolation")], [
-                    html.text("${person}"),
-                  ]),
-                  html.text("!`"),
                 ]),
-                html.text(")\n}\n\n"),
-                html.span([attribute.class("syntax-function")], [
-                  html.text("announce"),
-                ]),
-                html.text(" "),
-                html.span([attribute.class("syntax-operator")], [
-                  html.text("<-"),
-                ]),
-                html.text(" (message, person)"),
+                html.text(")"),
               ]),
             ]),
           ],
