@@ -115,6 +115,11 @@ pub fn view_homepage() {
                 html.span([attribute.class("syntax-function")], [
                   html.text("print"),
                 ]),
+                html.text(" "),
+                html.span([attribute.class("syntax-operator")], [
+                  html.text("->"),
+                ]),
+                html.text(" "),
                 html.text("("),
                 html.span([attribute.class("syntax-string")], [
                   html.text("`Sum: "),
