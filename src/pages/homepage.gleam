@@ -117,7 +117,7 @@ pub fn view_homepage() {
                 ]),
                 html.text(" "),
                 html.span([attribute.class("syntax-operator")], [
-                  html.text("->"),
+                  html.text("<-"),
                 ]),
                 html.text(" "),
                 html.text("("),
